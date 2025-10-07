@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Azure Static Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0078d4 0%, #00cfff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', Arial, sans-serif;
+            overflow: hidden;
+        }
+        .container {
+            background: rgba(255,255,255,0.15);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8px);
+            padding: 48px 64px;
+            text-align: center;
+            animation: fadeIn 1.5s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+        h1 {
+            font-size: 2.8rem;
+            color: #fff;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+            text-shadow: 0 4px 24px rgba(0,0,0,0.2);
+            animation: slideDown 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+        .azure-logo {
+            width: 80px;
+            margin-bottom: 24px;
+            animation: spin 3s linear infinite;
+            filter: drop-shadow(0 2px 8px #00cfff88);
+        }
+        p {
+            color: #e0f7fa;
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 0;
+            animation: fadeIn 2s 0.5s backwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95);}
+            to { opacity: 1; transform: scale(1);}
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg);}
+            100% { transform: rotate(360deg);}
+        }
+        /* Animated bubbles */
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.25;
+            background: #fff;
+            animation: bubbleMove 12s linear infinite;
+        }
+        .bubble1 { width: 80px; height: 80px; left: 10%; bottom: -100px; animation-delay: 0s;}
+        .bubble2 { width: 40px; height: 40px; left: 80%; bottom: -60px; animation-delay: 2s;}
+        .bubble3 { width: 60px; height: 60px; left: 50%; bottom: -80px; animation-delay: 4s;}
+        .bubble4 { width: 30px; height: 30px; left: 30%; bottom: -40px; animation-delay: 6s;}
+        .bubble5 { width: 100px; height: 100px; left: 70%; bottom: -120px; animation-delay: 8s;}
+        @keyframes bubbleMove {
+            0% { transform: translateY(0) scale(1);}
+            80% { opacity: 0.25;}
+            100% { transform: translateY(-110vh) scale(1.2); opacity: 0;}
+        }
+    </style>
+</head>
+<body>
+    <div class="bubble bubble1"></div>
+    <div class="bubble bubble2"></div>
+    <div class="bubble bubble3"></div>
+    <div class="bubble bubble4"></div>
+    <div class="bubble bubble5"></div>
+    <div class="container">
+        <img class="azure-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" alt="Azure Logo">
+        <h1>Beautiful Static Website<br>Deployed with Azure Web Services</h1>
+        <p>Welcome! This site is hosted on Azure.<br>Enjoy the smooth animations and modern design.</p>
+    </div>
+</body>
+</html>
